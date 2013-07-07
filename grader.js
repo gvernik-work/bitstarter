@@ -87,12 +87,9 @@ if(require.main == module) {
         .option('-u, --url <url_file>', 'index.html url', null, null)
         .parse(process.argv);
 
-//    console.log(program.checks);
-
     if (program.url == null)
         postFetch(program.file, program.checks);
     else {
-        //console.log(program.url);
         var fetch = fetchFile(program.checks);
         rest.get(program.url).on('complete', fetch);
     }
